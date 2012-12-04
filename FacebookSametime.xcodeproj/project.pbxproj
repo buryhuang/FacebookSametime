@@ -17,7 +17,12 @@
 		CEB7510B166D967A0055575E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB7510A166D967A0055575E /* Default@2x.png */; };
 		CEB7510D166D967A0055575E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB7510C166D967A0055575E /* Default-568h@2x.png */; };
 		CEB75110166D967A0055575E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB7510E166D967A0055575E /* MainStoryboard.storyboard */; };
-		CEB75113166D967A0055575E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB75112166D967A0055575E /* ViewController.m */; };
+		CEB75113166D967A0055575E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB75112166D967A0055575E /* LoginViewController.m */; };
+		CEB75120166D9A040055575E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB7511F166D9A040055575E /* MainViewController.m */; };
+		CEB75122166D9EA30055575E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB75121166D9EA30055575E /* FacebookSDK.framework */; };
+		CEB75124166DA3BD0055575E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB75123166DA3BD0055575E /* AdSupport.framework */; };
+		CEB75126166DA3C60055575E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB75125166DA3C60055575E /* Social.framework */; };
+		CEB75128166DA3CC0055575E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB75127166DA3CC0055575E /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +40,14 @@
 		CEB7510A166D967A0055575E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CEB7510C166D967A0055575E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CEB7510F166D967A0055575E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		CEB75111166D967A0055575E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CEB75112166D967A0055575E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CEB75111166D967A0055575E /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CEB75112166D967A0055575E /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CEB7511E166D9A040055575E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		CEB7511F166D9A040055575E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		CEB75121166D9EA30055575E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		CEB75123166DA3BD0055575E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		CEB75125166DA3C60055575E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		CEB75127166DA3CC0055575E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +55,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB75128166DA3CC0055575E /* Accounts.framework in Frameworks */,
+				CEB75126166DA3C60055575E /* Social.framework in Frameworks */,
+				CEB75124166DA3BD0055575E /* AdSupport.framework in Frameworks */,
 				CEB750F7166D967A0055575E /* UIKit.framework in Frameworks */,
 				CEB750F9166D967A0055575E /* Foundation.framework in Frameworks */,
 				CEB750FB166D967A0055575E /* CoreGraphics.framework in Frameworks */,
+				CEB75122166D9EA30055575E /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +71,9 @@
 		CEB750E7166D967A0055575E = {
 			isa = PBXGroup;
 			children = (
+				CEB75127166DA3CC0055575E /* Accounts.framework */,
+				CEB75125166DA3C60055575E /* Social.framework */,
+				CEB75123166DA3BD0055575E /* AdSupport.framework */,
 				CEB750FC166D967A0055575E /* FacebookSametime */,
 				CEB750F5166D967A0055575E /* Frameworks */,
 				CEB750F3166D967A0055575E /* Products */,
@@ -73,6 +91,7 @@
 		CEB750F5166D967A0055575E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEB75121166D9EA30055575E /* FacebookSDK.framework */,
 				CEB750F6166D967A0055575E /* UIKit.framework */,
 				CEB750F8166D967A0055575E /* Foundation.framework */,
 				CEB750FA166D967A0055575E /* CoreGraphics.framework */,
@@ -86,9 +105,11 @@
 				CEB75105166D967A0055575E /* AppDelegate.h */,
 				CEB75106166D967A0055575E /* AppDelegate.m */,
 				CEB7510E166D967A0055575E /* MainStoryboard.storyboard */,
-				CEB75111166D967A0055575E /* ViewController.h */,
-				CEB75112166D967A0055575E /* ViewController.m */,
+				CEB75111166D967A0055575E /* LoginViewController.h */,
+				CEB75112166D967A0055575E /* LoginViewController.m */,
 				CEB750FD166D967A0055575E /* Supporting Files */,
+				CEB7511E166D9A040055575E /* MainViewController.h */,
+				CEB7511F166D9A040055575E /* MainViewController.m */,
 			);
 			path = FacebookSametime;
 			sourceTree = "<group>";
@@ -175,7 +196,8 @@
 			files = (
 				CEB75103166D967A0055575E /* main.m in Sources */,
 				CEB75107166D967A0055575E /* AppDelegate.m in Sources */,
-				CEB75113166D967A0055575E /* ViewController.m in Sources */,
+				CEB75113166D967A0055575E /* LoginViewController.m in Sources */,
+				CEB75120166D9A040055575E /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +247,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -246,6 +269,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -254,6 +278,10 @@
 		CEB75117166D967A0055575E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FacebookSametime/FacebookSametime-Prefix.pch";
 				INFOPLIST_FILE = "FacebookSametime/FacebookSametime-Info.plist";
@@ -265,6 +293,10 @@
 		CEB75118166D967A0055575E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FacebookSametime/FacebookSametime-Prefix.pch";
 				INFOPLIST_FILE = "FacebookSametime/FacebookSametime-Info.plist";
@@ -292,6 +324,7 @@
 				CEB75118166D967A0055575E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
