@@ -1,0 +1,299 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEB750F7166D967A0055575E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB750F6166D967A0055575E /* UIKit.framework */; };
+		CEB750F9166D967A0055575E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB750F8166D967A0055575E /* Foundation.framework */; };
+		CEB750FB166D967A0055575E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB750FA166D967A0055575E /* CoreGraphics.framework */; };
+		CEB75101166D967A0055575E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEB750FF166D967A0055575E /* InfoPlist.strings */; };
+		CEB75103166D967A0055575E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB75102166D967A0055575E /* main.m */; };
+		CEB75107166D967A0055575E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB75106166D967A0055575E /* AppDelegate.m */; };
+		CEB75109166D967A0055575E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB75108166D967A0055575E /* Default.png */; };
+		CEB7510B166D967A0055575E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB7510A166D967A0055575E /* Default@2x.png */; };
+		CEB7510D166D967A0055575E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB7510C166D967A0055575E /* Default-568h@2x.png */; };
+		CEB75110166D967A0055575E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB7510E166D967A0055575E /* MainStoryboard.storyboard */; };
+		CEB75113166D967A0055575E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB75112166D967A0055575E /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CEB750F2166D967A0055575E /* FacebookSametime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookSametime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB750F6166D967A0055575E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CEB750F8166D967A0055575E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CEB750FA166D967A0055575E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CEB750FE166D967A0055575E /* FacebookSametime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FacebookSametime-Info.plist"; sourceTree = "<group>"; };
+		CEB75100166D967A0055575E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CEB75102166D967A0055575E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CEB75104166D967A0055575E /* FacebookSametime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookSametime-Prefix.pch"; sourceTree = "<group>"; };
+		CEB75105166D967A0055575E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CEB75106166D967A0055575E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CEB75108166D967A0055575E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CEB7510A166D967A0055575E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CEB7510C166D967A0055575E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CEB7510F166D967A0055575E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		CEB75111166D967A0055575E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CEB75112166D967A0055575E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEB750EF166D967A0055575E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB750F7166D967A0055575E /* UIKit.framework in Frameworks */,
+				CEB750F9166D967A0055575E /* Foundation.framework in Frameworks */,
+				CEB750FB166D967A0055575E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEB750E7166D967A0055575E = {
+			isa = PBXGroup;
+			children = (
+				CEB750FC166D967A0055575E /* FacebookSametime */,
+				CEB750F5166D967A0055575E /* Frameworks */,
+				CEB750F3166D967A0055575E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEB750F3166D967A0055575E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEB750F2166D967A0055575E /* FacebookSametime.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEB750F5166D967A0055575E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEB750F6166D967A0055575E /* UIKit.framework */,
+				CEB750F8166D967A0055575E /* Foundation.framework */,
+				CEB750FA166D967A0055575E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEB750FC166D967A0055575E /* FacebookSametime */ = {
+			isa = PBXGroup;
+			children = (
+				CEB75105166D967A0055575E /* AppDelegate.h */,
+				CEB75106166D967A0055575E /* AppDelegate.m */,
+				CEB7510E166D967A0055575E /* MainStoryboard.storyboard */,
+				CEB75111166D967A0055575E /* ViewController.h */,
+				CEB75112166D967A0055575E /* ViewController.m */,
+				CEB750FD166D967A0055575E /* Supporting Files */,
+			);
+			path = FacebookSametime;
+			sourceTree = "<group>";
+		};
+		CEB750FD166D967A0055575E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEB750FE166D967A0055575E /* FacebookSametime-Info.plist */,
+				CEB750FF166D967A0055575E /* InfoPlist.strings */,
+				CEB75102166D967A0055575E /* main.m */,
+				CEB75104166D967A0055575E /* FacebookSametime-Prefix.pch */,
+				CEB75108166D967A0055575E /* Default.png */,
+				CEB7510A166D967A0055575E /* Default@2x.png */,
+				CEB7510C166D967A0055575E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEB750F1166D967A0055575E /* FacebookSametime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB75116166D967A0055575E /* Build configuration list for PBXNativeTarget "FacebookSametime" */;
+			buildPhases = (
+				CEB750EE166D967A0055575E /* Sources */,
+				CEB750EF166D967A0055575E /* Frameworks */,
+				CEB750F0166D967A0055575E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FacebookSametime;
+			productName = FacebookSametime;
+			productReference = CEB750F2166D967A0055575E /* FacebookSametime.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEB750E9166D967A0055575E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "B&W";
+			};
+			buildConfigurationList = CEB750EC166D967A0055575E /* Build configuration list for PBXProject "FacebookSametime" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CEB750E7166D967A0055575E;
+			productRefGroup = CEB750F3166D967A0055575E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEB750F1166D967A0055575E /* FacebookSametime */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEB750F0166D967A0055575E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB75101166D967A0055575E /* InfoPlist.strings in Resources */,
+				CEB75109166D967A0055575E /* Default.png in Resources */,
+				CEB7510B166D967A0055575E /* Default@2x.png in Resources */,
+				CEB7510D166D967A0055575E /* Default-568h@2x.png in Resources */,
+				CEB75110166D967A0055575E /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEB750EE166D967A0055575E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB75103166D967A0055575E /* main.m in Sources */,
+				CEB75107166D967A0055575E /* AppDelegate.m in Sources */,
+				CEB75113166D967A0055575E /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CEB750FF166D967A0055575E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEB75100166D967A0055575E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CEB7510E166D967A0055575E /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEB7510F166D967A0055575E /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEB75114166D967A0055575E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CEB75115166D967A0055575E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEB75117166D967A0055575E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FacebookSametime/FacebookSametime-Prefix.pch";
+				INFOPLIST_FILE = "FacebookSametime/FacebookSametime-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CEB75118166D967A0055575E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FacebookSametime/FacebookSametime-Prefix.pch";
+				INFOPLIST_FILE = "FacebookSametime/FacebookSametime-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEB750EC166D967A0055575E /* Build configuration list for PBXProject "FacebookSametime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB75114166D967A0055575E /* Debug */,
+				CEB75115166D967A0055575E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB75116166D967A0055575E /* Build configuration list for PBXNativeTarget "FacebookSametime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB75117166D967A0055575E /* Debug */,
+				CEB75118166D967A0055575E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEB750E9166D967A0055575E /* Project object */;
+}
