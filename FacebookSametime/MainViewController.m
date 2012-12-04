@@ -66,6 +66,12 @@
             //                [topViewController dismissModalViewControllerAnimated:YES];
             //            }
             self.fbSessionState = @"Opened0";
+            
+            if (FBSession.activeSession.isOpen) {
+                NSLog(@"Will Appear: Update User detail!");
+                [self populateUserDetails];
+            }
+            
             [[[FBRequest alloc] initWithSession:[FBSession activeSession]
                                       graphPath:@"search?type=checkin" ]
              startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -158,6 +164,7 @@
             NSDictionary<FBGraphUser> *my = (NSDictionary<FBGraphUser> *) result;
             NSLog(@"My dictionary: %@", my.first_name);
             //self.barUserItem.title =  my.first_name;
+            self.title = my.first_name;
         }];
     }
 }
