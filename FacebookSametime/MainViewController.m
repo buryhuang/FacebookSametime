@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "FriendLocation.h"
 
 @interface MainViewController ()
 
@@ -203,6 +204,10 @@
              
              zoomLocation.latitude = [[location objectForKey:@"latitude"] doubleValue];
              zoomLocation.longitude = [[location objectForKey:@"longitude"] doubleValue];
+             NSString * userName = [user objectForKey:@"name"];
+
+             FriendLocation *annotation = [[FriendLocation alloc] initWithName:userName city:[location objectForKey:@"city"] coordinate:zoomLocation] ;
+             [_mapView addAnnotation:annotation];
          }
          //zoomLocation.latitude = 39.281516;
          //zoomLocation.longitude= -76.580806;

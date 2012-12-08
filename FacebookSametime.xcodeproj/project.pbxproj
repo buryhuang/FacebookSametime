@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE348DFB166DC4000012E04B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE348DFA166DC4000012E04B /* MapKit.framework */; };
+		CE5C84B1167323A400F1452A /* FriendLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5C84B0167323A400F1452A /* FriendLocation.m */; };
 		CEB750F7166D967A0055575E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB750F6166D967A0055575E /* UIKit.framework */; };
 		CEB750F9166D967A0055575E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB750F8166D967A0055575E /* Foundation.framework */; };
 		CEB750FB166D967A0055575E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB750FA166D967A0055575E /* CoreGraphics.framework */; };
@@ -27,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		CE348DFA166DC4000012E04B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CE5C84AF167323A400F1452A /* FriendLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendLocation.h; sourceTree = "<group>"; };
+		CE5C84B0167323A400F1452A /* FriendLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendLocation.m; sourceTree = "<group>"; };
 		CEB750F2166D967A0055575E /* FacebookSametime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookSametime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB750F6166D967A0055575E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEB750F8166D967A0055575E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,6 +74,8 @@
 		CEB750E7166D967A0055575E = {
 			isa = PBXGroup;
 			children = (
+				CE5C84AF167323A400F1452A /* FriendLocation.h */,
+				CE5C84B0167323A400F1452A /* FriendLocation.m */,
 				CE348DFA166DC4000012E04B /* MapKit.framework */,
 				CEB75127166DA3CC0055575E /* Accounts.framework */,
 				CEB75125166DA3C60055575E /* Social.framework */,
@@ -196,6 +201,7 @@
 				CEB75103166D967A0055575E /* main.m in Sources */,
 				CEB75107166D967A0055575E /* AppDelegate.m in Sources */,
 				CEB75120166D9A040055575E /* MainViewController.m in Sources */,
+				CE5C84B1167323A400F1452A /* FriendLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
