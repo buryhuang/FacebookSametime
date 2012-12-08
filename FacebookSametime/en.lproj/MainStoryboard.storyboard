@@ -60,14 +60,16 @@
         <scene sceneID="gCO-at-ysE">
             <objects>
                 <viewController id="9qc-iv-Xhz" customClass="MainViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="g4x-tb-Y5K">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="F6U-nd-DuN">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </mapView>
                     <navigationItem key="navigationItem" title="User" id="Anx-hF-Z6Y">
                         <barButtonItem key="backBarButtonItem" title="Logout" id="P4F-cM-Qyu"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="F6U-nd-DuN" id="N4q-OC-6ty"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pta-mb-lI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,10 +77,10 @@
         </scene>
     </scenes>
     <classes>
-        <class className="MainViewController" superclassName="UINavigationController">
+        <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="barUserItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

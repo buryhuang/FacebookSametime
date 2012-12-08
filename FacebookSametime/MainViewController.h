@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <MapKit/MapKit.h>
 
-@interface MainViewController : UIViewController
+#define METERS_PER_MILE 1609.344
+
+
+@interface MainViewController : UIViewController<MKMapViewDelegate>
 
 - (void) sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
 - (void) openSession;
@@ -20,6 +24,6 @@
 @property (nonatomic, retain) FBSession * fbSession;
 @property (nonatomic, retain) NSString * fbSessionState;
 
-@property (nonatomic, retain) IBOutlet UIBarButtonItem * barUserItem;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end

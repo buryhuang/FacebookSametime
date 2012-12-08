@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
     if (self.fbSession == nil) {
         [self openSession];
         
@@ -65,10 +66,10 @@
             //                 isKindOfClass:[SCLoginViewController class]]) {
             //                [topViewController dismissModalViewControllerAnimated:YES];
             //            }
-            self.fbSessionState = @"Opened0";
+            self.fbSessionState = @"Opened";
             
             if (FBSession.activeSession.isOpen) {
-                NSLog(@"Will Appear: Update User detail!");
+                NSLog(@"Session opened: Update User detail!");
                 [self populateUserDetails];
             }
             
@@ -173,10 +174,47 @@
     [super viewWillAppear:animated];
     NSLog(@"Will Appear!");
     
-    if (FBSession.activeSession.isOpen) {
-        NSLog(@"Will Appear: Update User detail!");
-        [self populateUserDetails];
+    if (self.fbSession == nil) {
+        [self openSession];
+        
+        if(FBSession.activeSession.isOpen) {
+            self.fbSession = FBSession.activeSession;
+            [self populateUserDetails];
+        }
     }
+
+    // 1
+    __block CLLocationCoordinate2D zoomLocation;
+
+    [[[FBRequest alloc] initWithSession:[FBSession activeSession]
+                              graphPath:@"search?type=checkin" ]
+     startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+         //NSLog(@"home result: %@", result);
+         NSArray *data = [result objectForKey:@"data"];
+         for(NSDictionary *message in data){
+             NSDictionary *user = [message objectForKey:@"from"];
+             NSDictionary *place = [message objectForKey:@"place"];
+             NSDictionary *location = [place objectForKey:@"location"];
+             NSLog(@"User %@ wrote: %@ @ %@,%@,%@", [user objectForKey:@"name"],
+                   [message objectForKey:@"message"],
+                   [location objectForKey:@"city"],
+                   [location objectForKey:@"latitude"],
+                   [location objectForKey:@"longitude"]);
+             
+             zoomLocation.latitude = [[location objectForKey:@"latitude"] doubleValue];
+             zoomLocation.longitude = [[location objectForKey:@"longitude"] doubleValue];
+         }
+         //zoomLocation.latitude = 39.281516;
+         //zoomLocation.longitude= -76.580806;
+         // 2
+         MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+         // 3
+         MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
+         // 4
+         [_mapView setRegion:adjustedRegion animated:YES];
+     }];
+
+
 }
 
 
