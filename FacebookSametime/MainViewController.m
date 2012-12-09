@@ -68,28 +68,6 @@
             //                [topViewController dismissModalViewControllerAnimated:YES];
             //            }
             self.fbSessionState = @"Opened";
-            
-            if (FBSession.activeSession.isOpen) {
-                NSLog(@"Session opened: Update User detail!");
-                [self populateUserDetails];
-            }
-            
-            [[[FBRequest alloc] initWithSession:[FBSession activeSession]
-                                      graphPath:@"search?type=checkin" ]
-             startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                 //NSLog(@"home result: %@", result);
-                 NSArray *data = [result objectForKey:@"data"];
-                 for(NSDictionary *message in data){
-                     NSDictionary *user = [message objectForKey:@"from"];
-                     NSDictionary *place = [message objectForKey:@"place"];
-                     NSDictionary *location = [place objectForKey:@"location"];
-                     NSLog(@"User %@ wrote: %@ @ %@,%@,%@", [user objectForKey:@"name"],
-                           [message objectForKey:@"message"],
-                           [location objectForKey:@"city"],
-                           [location objectForKey:@"latitude"],
-                           [location objectForKey:@"longitude"]);
-                 }
-             }];
         }
             break;
         case FBSessionStateClosed:
@@ -186,9 +164,10 @@
 
     // 1
     __block CLLocationCoordinate2D zoomLocation;
+    NSString * searchString = @"me/home?with=location";//@"search?type=checkin";
 
     [[[FBRequest alloc] initWithSession:[FBSession activeSession]
-                              graphPath:@"search?type=checkin" ]
+                              graphPath:searchString ]
      startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
          //NSLog(@"home result: %@", result);
          NSArray *data = [result objectForKey:@"data"];
