@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "FriendLocation.h"
+#import "FbLocationPost.h"
 
 @interface MainViewController ()
 
@@ -161,45 +162,26 @@
             [self populateUserDetails];
         }
     }
-
-    // 1
-    __block CLLocationCoordinate2D zoomLocation;
-    NSString * searchString = @"me/home?with=location";//@"search?type=checkin";
-
-    [[[FBRequest alloc] initWithSession:[FBSession activeSession]
-                              graphPath:searchString ]
-     startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-         //NSLog(@"home result: %@", result);
-         NSArray *data = [result objectForKey:@"data"];
-         for(NSDictionary *message in data){
-             NSDictionary *user = [message objectForKey:@"from"];
-             NSDictionary *place = [message objectForKey:@"place"];
-             NSDictionary *location = [place objectForKey:@"location"];
-             NSLog(@"User %@ wrote: %@ @ %@,%@,%@", [user objectForKey:@"name"],
-                   [message objectForKey:@"message"],
-                   [location objectForKey:@"city"],
-                   [location objectForKey:@"latitude"],
-                   [location objectForKey:@"longitude"]);
-             
-             zoomLocation.latitude = [[location objectForKey:@"latitude"] doubleValue];
-             zoomLocation.longitude = [[location objectForKey:@"longitude"] doubleValue];
-             NSString * userName = [user objectForKey:@"name"];
-
-             FriendLocation *annotation = [[FriendLocation alloc] initWithName:userName city:[location objectForKey:@"city"] coordinate:zoomLocation] ;
-             [_mapView addAnnotation:annotation];
-         }
-         //zoomLocation.latitude = 39.281516;
-         //zoomLocation.longitude= -76.580806;
-         // 2
-         MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-         // 3
-         MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
-         // 4
-         [_mapView setRegion:adjustedRegion animated:YES];
-     }];
-
-
+ 
+    [FbLocationPost getFriendLocations:self];
 }
 
+- (void)populateFriendsLocations:(NSMutableArray *)locList:_locList {
+    if([_locList count] > 0) {
+        FriendLocation *friendLoc = [_locList lastObject];
+        
+        [_mapView addAnnotation:friendLoc];
+        //zoomLocation.latitude = 39.281516;
+        //zoomLocation.longitude= -76.580806;
+        // 2
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(friendLoc.coordinate, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+        // 3
+        MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
+        // 4
+        [_mapView setRegion:adjustedRegion animated:YES];
+    } else {
+        NSLog(@"%@", @"No locations found");
+    }
+}
 
 @end

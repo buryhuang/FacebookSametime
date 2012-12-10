@@ -17,7 +17,7 @@
 
 @property (copy) NSString *name;
 @property (copy) NSString *city;
-@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic, readwrite) CLLocationCoordinate2D coordinate;
 
 - (id)initWithName:(NSString*)name city:(NSString*)city coordinate:(CLLocationCoordinate2D)coordinate;
 

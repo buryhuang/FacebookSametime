@@ -19,6 +19,7 @@
 - (void) openSession;
 
 - (void)viewWillAppear:(BOOL)animated;
+- (void)populateFriendsLocations:(NSMutableArray *)locList:_locList;
 - (void)populateUserDetails;
 
 @property (nonatomic, retain) FBSession * fbSession;
