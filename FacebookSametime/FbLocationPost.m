@@ -10,7 +10,7 @@
 
 @implementation FbLocationPost
 
-+ (void) getFriendLocations:(MainViewController *)_view {
++ (void) getFriendLocations:(id <FbLocationPostDelegate>)_delegate {
 
     
     NSMutableArray * locList = [[NSMutableArray alloc] init];
@@ -42,7 +42,7 @@
              [locList addObject:friendLoc];
          }
          
-         [_view populateFriendsLocations:locList:locList];
+         [_delegate locationListReady:locList];
 
     }];
 }

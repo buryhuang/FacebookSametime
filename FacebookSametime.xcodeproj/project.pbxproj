@@ -31,6 +31,7 @@
 /* Begin PBXFileReference section */
 		CE348DFA166DC4000012E04B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CE58A4D616754C0500BAAE8D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CE58A4D91675661F00BAAE8D /* FbLocationPostDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FbLocationPostDelegate.h; sourceTree = "<group>"; };
 		CE5C84AF167323A400F1452A /* FriendLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendLocation.h; path = ../FriendLocation.h; sourceTree = "<group>"; };
 		CE5C84B0167323A400F1452A /* FriendLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendLocation.m; path = ../FriendLocation.m; sourceTree = "<group>"; };
 		CE5C84B31675486C00F1452A /* FbLocationPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FbLocationPost.h; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 				CEB7511F166D9A040055575E /* MainViewController.m */,
 				CE5C84B31675486C00F1452A /* FbLocationPost.h */,
 				CE5C84B41675486C00F1452A /* FbLocationPost.m */,
+				CE58A4D91675661F00BAAE8D /* FbLocationPostDelegate.h */,
 			);
 			path = FacebookSametime;
 			sourceTree = "<group>";

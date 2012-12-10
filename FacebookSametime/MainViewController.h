@@ -9,18 +9,20 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <MapKit/MapKit.h>
+#import "FbLocationPostDelegate.h"
 
 #define METERS_PER_MILE 1609.344
 
 
-@interface MainViewController : UIViewController<MKMapViewDelegate>
+@interface MainViewController : UIViewController<MKMapViewDelegate, FbLocationPostDelegate>
 
 - (void) sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
 - (void) openSession;
 
 - (void)viewWillAppear:(BOOL)animated;
-- (void)populateFriendsLocations:(NSMutableArray *)locList:_locList;
 - (void)populateUserDetails;
+
+- (void)locationListReady:(NSMutableArray *)_locList;
 
 @property (nonatomic, retain) FBSession * fbSession;
 @property (nonatomic, retain) NSString * fbSessionState;

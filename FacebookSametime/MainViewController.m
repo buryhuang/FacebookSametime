@@ -166,9 +166,9 @@
     [FbLocationPost getFriendLocations:self];
 }
 
-- (void)populateFriendsLocations:(NSMutableArray *)locList:_locList {
-    if([_locList count] > 0) {
-        FriendLocation *friendLoc = [_locList lastObject];
+- (void)locationListReady:(NSMutableArray *)_locList {
+    for(int index = 0; index < _locList.count; index ++) {
+        FriendLocation *friendLoc = [_locList objectAtIndex:index];
         
         [_mapView addAnnotation:friendLoc];
         //zoomLocation.latitude = 39.281516;
@@ -179,8 +179,6 @@
         MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
         // 4
         [_mapView setRegion:adjustedRegion animated:YES];
-    } else {
-        NSLog(@"%@", @"No locations found");
     }
 }
 

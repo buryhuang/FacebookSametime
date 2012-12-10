@@ -10,10 +10,10 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <MapKit/MapKit.h>
 #import "FriendLocation.h"
-#import "MainViewController.h"
+#import "FbLocationPostDelegate.h"
 
 @interface FbLocationPost : NSObject
 
-+ (void) getFriendLocations:(MainViewController *)_view;
++ (void) getFriendLocations:(id <FbLocationPostDelegate>)_delegate;
 
 @end
