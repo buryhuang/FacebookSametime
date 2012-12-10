@@ -14,37 +14,95 @@
 
     
     NSMutableArray * locList = [[NSMutableArray alloc] init];
+    NSMutableDictionary * friendList = [[NSMutableDictionary alloc] init];
 
-    NSString * searchString = @"me/home?with=location";//@"search?type=checkin";
+    //NSString * searchString = @"me/home?with=location";//@"search?type=checkin";
+    NSString * fqlQueryString = @"select id, name from profile where id in (select author_uid from location_post where author_uid in (select uid2 from friend where uid1=me()))"; //  and timestamp < 1301043200
+    NSDictionary *queryParam =
+    [NSDictionary dictionaryWithObjectsAndKeys:fqlQueryString, @"q", nil];
     
     [[[FBRequest alloc] initWithSession:[FBSession activeSession]
-                              graphPath:searchString ]
+                            graphPath:@"/fql"
+                            parameters:queryParam
+                            HTTPMethod:@"GET"]
      startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
          //NSLog(@"home result: %@", result);
          NSArray *data = [result objectForKey:@"data"];
+         //NSLog(@"Query data: %@", data);
          for(NSDictionary *message in data){
-             NSDictionary *user = [message objectForKey:@"from"];
-             NSDictionary *place = [message objectForKey:@"place"];
-             NSDictionary *location = [place objectForKey:@"location"];
-             NSLog(@"User %@ wrote: %@ @ %@,%@,%@", [user objectForKey:@"name"],
-                   [message objectForKey:@"message"],
-                   [location objectForKey:@"city"],
-                   [location objectForKey:@"latitude"],
-                   [location objectForKey:@"longitude"]);
-
+             //NSLog(@"Query message: %@", message);;
+             NSString *userId = [[message objectForKey:@"id"] stringValue];
+             NSString *userName = [message objectForKey:@"name"];
+             [friendList setObject:userName forKey:userId];
+         }
+    }];
+    
+    fqlQueryString = @"select author_uid, message, latitude, longitude, type, timestamp from location_post where author_uid in (select uid2 from friend where uid1=me()) ";
+    queryParam =
+    [NSDictionary dictionaryWithObjectsAndKeys:fqlQueryString, @"q", nil];
+    
+    [[[FBRequest alloc] initWithSession:[FBSession activeSession]
+                              graphPath:@"/fql"
+                             parameters:queryParam
+                             HTTPMethod:@"GET"]
+     startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+         //NSLog(@"home result: %@", result);
+         NSArray *data = [result objectForKey:@"data"];
+         //NSLog(@"Query data: %@", data);
+         for(NSDictionary *entry in data){
+             //NSLog(@"Query message: %@", entry);;
+             NSString *userId = [[entry objectForKey:@"author_uid"] stringValue];
+             NSString *userName = [friendList objectForKey:userId];
+             NSString *message = [entry objectForKey:@"message"];
              CLLocationCoordinate2D zoomCoord;
-             zoomCoord.latitude = [[location objectForKey:@"latitude"] doubleValue];
-             zoomCoord.longitude = [[location objectForKey:@"longitude"] doubleValue];
-             NSString * userName = [user objectForKey:@"name"];
-             NSString * city = [location objectForKey:@"city"];
+             zoomCoord.latitude = [[entry objectForKey:@"latitude"] doubleValue];
+             zoomCoord.longitude = [[entry objectForKey:@"longitude"] doubleValue];
+             NSString * city = [entry objectForKey:@"type"];
              
-             FriendLocation * friendLoc = [[FriendLocation alloc] initWithName:userName city:city coordinate:zoomCoord];
+             NSLog(@"User %@ wrote: %@ @ %@,%f,%f", userName,
+                   message, city, zoomCoord.latitude, zoomCoord.longitude);
+             
+             FriendLocation * friendLoc = [[FriendLocation alloc] initWithName:userName city:message coordinate:zoomCoord];
+             [locList addObject:friendLoc];
+         }
+         
+         //[_delegate locationListReady:locList];
+         
+     }];
+
+    fqlQueryString = @"select author_uid, message, latitude, longitude, type, timestamp from location_post where author_uid=me() ";
+    queryParam =
+    [NSDictionary dictionaryWithObjectsAndKeys:fqlQueryString, @"q", nil];
+    
+    [[[FBRequest alloc] initWithSession:[FBSession activeSession]
+                              graphPath:@"/fql"
+                             parameters:queryParam
+                             HTTPMethod:@"GET"]
+     startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+         //NSLog(@"home result: %@", result);
+         NSArray *data = [result objectForKey:@"data"];
+         NSLog(@"Myself Query data: %@", data);
+         for(NSDictionary *entry in data){
+             //NSLog(@"Query message: %@", entry);;
+             NSString *userId = [[entry objectForKey:@"author_uid"] stringValue];
+             NSString *userName = [friendList objectForKey:userId];
+             NSString *message = [entry objectForKey:@"message"];
+             CLLocationCoordinate2D zoomCoord;
+             zoomCoord.latitude = [[entry objectForKey:@"latitude"] doubleValue];
+             zoomCoord.longitude = [[entry objectForKey:@"longitude"] doubleValue];
+             NSString * city = [entry objectForKey:@"type"];
+             
+             NSLog(@"User myself wrote: %@ @ %@,%f,%f",
+                   message, city, zoomCoord.latitude, zoomCoord.longitude);
+             
+             FriendLocation * friendLoc = [[FriendLocation alloc] initWithName:@"Me" city:message coordinate:zoomCoord];
              [locList addObject:friendLoc];
          }
          
          [_delegate locationListReady:locList];
+         
+     }];
 
-    }];
 }
 
 @end

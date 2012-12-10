@@ -167,19 +167,23 @@
 }
 
 - (void)locationListReady:(NSMutableArray *)_locList {
+    FriendLocation *friendLoc;
+    
     for(int index = 0; index < _locList.count; index ++) {
-        FriendLocation *friendLoc = [_locList objectAtIndex:index];
+        friendLoc = [_locList objectAtIndex:index];
         
         [_mapView addAnnotation:friendLoc];
-        //zoomLocation.latitude = 39.281516;
-        //zoomLocation.longitude= -76.580806;
-        // 2
-        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(friendLoc.coordinate, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-        // 3
-        MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
-        // 4
-        [_mapView setRegion:adjustedRegion animated:YES];
     }
+
+    //zoomLocation.latitude = 39.281516;
+    //zoomLocation.longitude= -76.580806;
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(friendLoc.coordinate, 50*METERS_PER_MILE, 50*METERS_PER_MILE);
+    // 3
+    MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
+    // 4
+    [_mapView setRegion:adjustedRegion animated:YES];
+
 }
 
 @end
