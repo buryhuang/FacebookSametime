@@ -17,7 +17,7 @@
     NSMutableDictionary * friendList = [[NSMutableDictionary alloc] init];
 
     //NSString * searchString = @"me/home?with=location";//@"search?type=checkin";
-    NSString * fqlQueryString = @"select id, name from profile where id in (select author_uid from location_post where author_uid in (select uid2 from friend where uid1=me()))"; //  and timestamp < 1301043200
+    NSString * fqlQueryString = @"select id, name from profile where id in (select author_uid from location_post where author_uid in (select uid2 from friend where uid1=me()) limit 100)"; //  and timestamp < 1301043200
     NSDictionary *queryParam =
     [NSDictionary dictionaryWithObjectsAndKeys:fqlQueryString, @"q", nil];
     
@@ -37,7 +37,7 @@
          }
     }];
     
-    fqlQueryString = @"select author_uid, message, latitude, longitude, type, timestamp from location_post where author_uid in (select uid2 from friend where uid1=me()) ";
+    fqlQueryString = @"select author_uid, message, latitude, longitude, type, timestamp from location_post where author_uid in (select uid2 from friend where uid1=me()) limit 100";
     queryParam =
     [NSDictionary dictionaryWithObjectsAndKeys:fqlQueryString, @"q", nil];
     
@@ -66,11 +66,11 @@
              [locList addObject:friendLoc];
          }
          
-         //[_delegate locationListReady:locList];
+         [_delegate locationListReady:locList];
          
      }];
 
-    fqlQueryString = @"select author_uid, message, latitude, longitude, type, timestamp from location_post where author_uid=me() ";
+    fqlQueryString = @"select author_uid, message, latitude, longitude, type, timestamp from location_post where author_uid=me() limit 10";
     queryParam =
     [NSDictionary dictionaryWithObjectsAndKeys:fqlQueryString, @"q", nil];
     
@@ -84,8 +84,8 @@
          NSLog(@"Myself Query data: %@", data);
          for(NSDictionary *entry in data){
              //NSLog(@"Query message: %@", entry);;
-             NSString *userId = [[entry objectForKey:@"author_uid"] stringValue];
-             NSString *userName = [friendList objectForKey:userId];
+             //NSString *userId = [[entry objectForKey:@"author_uid"] stringValue];
+             //NSString *userName = [friendList objectForKey:userId];
              NSString *message = [entry objectForKey:@"message"];
              CLLocationCoordinate2D zoomCoord;
              zoomCoord.latitude = [[entry objectForKey:@"latitude"] doubleValue];

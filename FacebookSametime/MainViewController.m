@@ -178,7 +178,7 @@
     //zoomLocation.latitude = 39.281516;
     //zoomLocation.longitude= -76.580806;
     // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(friendLoc.coordinate, 50*METERS_PER_MILE, 50*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(friendLoc.coordinate, 15*METERS_PER_MILE, 15*METERS_PER_MILE);
     // 3
     MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
     // 4
