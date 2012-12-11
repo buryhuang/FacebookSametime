@@ -173,6 +173,7 @@
         friendLoc = [_locList objectAtIndex:index];
         
         [_mapView addAnnotation:friendLoc];
+        [_mapView selectAnnotation:friendLoc animated:YES];
     }
 
     //zoomLocation.latitude = 39.281516;
