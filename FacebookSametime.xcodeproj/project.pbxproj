@@ -14,6 +14,7 @@
 		CEAC6D691676FDF800997F84 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAC6D681676FDF800997F84 /* Icon@2x.png */; };
 		CEAC6D6B1676FE3E00997F84 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAC6D6A1676FE3E00997F84 /* Default@2x.png */; };
 		CEAC6D6D1676FE7000997F84 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAC6D6C1676FE7000997F84 /* Default.png */; };
+		CEAC6D7016770ACC00997F84 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAC6D6F16770ACC00997F84 /* LoginViewController.m */; };
 		CEB750F7166D967A0055575E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB750F6166D967A0055575E /* UIKit.framework */; };
 		CEB750F9166D967A0055575E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB750F8166D967A0055575E /* Foundation.framework */; };
 		CEB750FB166D967A0055575E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB750FA166D967A0055575E /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 		CEAC6D681676FDF800997F84 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		CEAC6D6A1676FE3E00997F84 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CEAC6D6C1676FE7000997F84 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CEAC6D6E16770ACC00997F84 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CEAC6D6F16770ACC00997F84 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CEB750F2166D967A0055575E /* FacebookSametime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookSametime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB750F6166D967A0055575E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEB750F8166D967A0055575E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 				CE5C84B31675486C00F1452A /* FbLocationPost.h */,
 				CE5C84B41675486C00F1452A /* FbLocationPost.m */,
 				CE58A4D91675661F00BAAE8D /* FbLocationPostDelegate.h */,
+				CEAC6D6E16770ACC00997F84 /* LoginViewController.h */,
+				CEAC6D6F16770ACC00997F84 /* LoginViewController.m */,
 			);
 			path = FacebookSametime;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				CEB75120166D9A040055575E /* MainViewController.m in Sources */,
 				CE5C84B1167323A400F1452A /* FriendLocation.m in Sources */,
 				CE5C84B51675486C00F1452A /* FbLocationPost.m in Sources */,
+				CEAC6D7016770ACC00997F84 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
